@@ -183,26 +183,49 @@
             margin-top: 1rem;
         }
         
-        .education-card {
+        .awards-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .award-item {
             background-color: var(--card-bg);
             padding: 1.5rem;
             border-radius: 5px;
-            margin-bottom: 2rem;
+            display: flex;
+            gap: 1.5rem;
             border-left: 4px solid var(--accent-red);
         }
         
-        .education-card h3 {
+        .award-icon {
+            flex: 0 0 60px;
+            height: 60px;
+            background-color: rgba(196, 30, 58, 0.15);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.8rem;
             color: var(--accent-red);
+        }
+        
+        .award-content {
+            flex: 1;
+        }
+        
+        .award-content h3 {
+            color: var(--text-light);
             margin-bottom: 0.5rem;
         }
         
-        .education-card .year {
-            color: var(--text-gray);
-            font-style: italic;
-            margin-bottom: 1rem;
+        .award-date {
+            color: var(--accent-red);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
         }
         
-        .education-card p {
+        .award-description {
             color: var(--text-gray);
         }
         
@@ -364,6 +387,16 @@
                 grid-template-columns: 1fr;
             }
             
+            .award-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .award-icon {
+                margin-bottom: 1rem;
+            }
+            
             nav ul {
                 flex-wrap: wrap;
             }
@@ -388,8 +421,8 @@
             <ul>
                 <li><a href="#biography">Biography</a></li>
                 <li><a href="#interests">Interests</a></li>
-                <!-- Education menu item removed as it's now included in Biography -->
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#awards">Awards</a></li>
                 <li><a href="#news">Recent News</a></li>
                 <li><a href="#publications">Publications</a></li>
             </ul>
@@ -416,12 +449,13 @@
                             
                             <div class="bio-item">
                                 <h3><i class="fas fa-flask"></i> Research Labs</h3>
-                                <p>PTIT IEC Lab</p>
+                                <p>PTIT IEC Lab<br>
+                                Swinburne Innovation Space</p>
                             </div>
                             
                             <div class="bio-item">
                                 <h3><i class="fas fa-briefcase"></i> Current Position</h3>
-                                <p>AI Research Assistant at Swinburne Innovation Space<br>
+                                <p>AI Researcher at Swinburne Innovation Space<br>
                                 Research Assistant at PTIT IEC Lab</p>
                             </div>
                             
@@ -466,7 +500,45 @@
             </div>
         </section>
         
-        <!-- Education section removed as it's now included in Biography -->
+        <section id="awards">
+            <div class="container">
+                <h2>Awards & Achievements</h2>
+                <div class="awards-container">
+                    <div class="award-item">
+                        <div class="award-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="award-content">
+                            <h3>Top 2 Finalist - Vietnam Intel® AI Global Impact Festival 2024</h3>
+                            <p class="award-date">2024</p>
+                            <p class="award-description">Recognized among the top AI projects in Vietnam at the prestigious Intel® AI Global Impact Festival, demonstrating excellence in innovative artificial intelligence solutions with global impact potential.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="award-item">
+                        <div class="award-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <div class="award-content">
+                            <h3>First Prize - Swinburne Hackathon</h3>
+                            <p class="award-date">2024</p>
+                            <p class="award-description">Awarded first place at the Swinburne Hackathon for developing an innovative solution that addressed real-world challenges through creative problem-solving and effective implementation within a limited timeframe.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="award-item">
+                        <div class="award-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="award-content">
+                            <h3>First Prize - University-level Student Scientific Research Competition</h3>
+                            <p class="award-date">2024</p>
+                            <p class="award-description">Recognized with the top award in the university's student scientific research competition for outstanding contribution to academic research, demonstrating exceptional analytical skills and innovative thinking.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         
         <section id="projects">
             <div class="container">
@@ -521,31 +593,8 @@
         <section id="publications">
             <div class="container">
                 <h2>Publications</h2>
-                <ul class="publication-list">
-                    <li class="publication-item">
-                        <h3>An IoT architecture using federated learning for smart greenhouse</h3>
-                        <div class="publication-authors">Trang Ha, Phuong Anh Nguyen, <strong>Tung Vu</strong>, Anh-Ngoc Le</div>
-                        <div class="publication-venue">Lecture Notes in Electrical Engineering, 2024</div>
-                        <p>This paper presents an innovative IoT architecture that leverages federated learning for smart greenhouse applications, enhancing data privacy while enabling effective monitoring and control systems.</p>
-                        <div class="publication-links">
-                            <a href="#"><i class="fas fa-file-pdf"></i> PDF</a>
-                            <a href="#"><i class="fas fa-link"></i> DOI</a>
-                            <a href="#"><i class="fas fa-code"></i> Code</a>
-                        </div>
-                    </li>
-                    
-                    <li class="publication-item">
-                        <h3>Advancing Geopolitical Map Analysis: An Intelligent System for Territorial Integrity Verification</h3>
-                        <div class="publication-authors"><strong>Tung Vu</strong>, Hung Nguyen, Nam Nguyen, Cong Tran</div>
-                        <div class="publication-venue">Communications in Computer and Information Science, 2024</div>
-                        <p>This research introduces an intelligent system for automated territorial integrity verification in geopolitical maps, employing advanced computer vision and machine learning techniques.</p>
-                        <div class="publication-links">
-                            <a href="#"><i class="fas fa-file-pdf"></i> PDF</a>
-                            <a href="#"><i class="fas fa-link"></i> DOI</a>
-                            <a href="#"><i class="fas fa-code"></i> Code</a>
-                        </div>
-                    </li>
-                    
+                <ul class="publication-list" id="publication-list">
+                    <!-- 2025 Publications -->
                     <li class="publication-item">
                         <h3>An Innovative Transformer Model for Indoor Positioning Using WiFi Fingerprinting</h3>
                         <div class="publication-authors">Phuong Anh Nguyen, <strong>Tung Vu</strong>, Ngoc Le</div>
@@ -570,6 +619,7 @@
                         </div>
                     </li>
                     
+                    <!-- 2024 Publications (showing first 3) -->
                     <li class="publication-item">
                         <h3>Federated Learning Architecture for Greenhouse Temperature Forecasting Using LSTM Networks</h3>
                         <div class="publication-authors">Phuong Anh Nguyen, Trang Ha, Satyam Mishra, <strong>Tung Vu</strong>, Anh-Ngoc Le, Do-Hyeun Kim</div>
@@ -582,6 +632,33 @@
                         </div>
                     </li>
                     
+                    <li class="publication-item">
+                        <h3>An IoT architecture using federated learning for smart greenhouse</h3>
+                        <div class="publication-authors">Trang Ha, Phuong Anh Nguyen, <strong>Tung Vu</strong>, Anh-Ngoc Le</div>
+                        <div class="publication-venue">Lecture Notes in Electrical Engineering, 2024</div>
+                        <p>This paper presents an innovative IoT architecture that leverages federated learning for smart greenhouse applications, enhancing data privacy while enabling effective monitoring and control systems.</p>
+                        <div class="publication-links">
+                            <a href="#"><i class="fas fa-file-pdf"></i> PDF</a>
+                            <a href="#"><i class="fas fa-link"></i> DOI</a>
+                            <a href="#"><i class="fas fa-code"></i> Code</a>
+                        </div>
+                    </li>
+                    
+                    <li class="publication-item">
+                        <h3>Advancing Geopolitical Map Analysis: An Intelligent System for Territorial Integrity Verification</h3>
+                        <div class="publication-authors"><strong>Tung Vu</strong>, Hung Nguyen, Nam Nguyen, Cong Tran</div>
+                        <div class="publication-venue">Communications in Computer and Information Science, 2024</div>
+                        <p>This research introduces an intelligent system for automated territorial integrity verification in geopolitical maps, employing advanced computer vision and machine learning techniques.</p>
+                        <div class="publication-links">
+                            <a href="#"><i class="fas fa-file-pdf"></i> PDF</a>
+                            <a href="#"><i class="fas fa-link"></i> DOI</a>
+                            <a href="#"><i class="fas fa-code"></i> Code</a>
+                        </div>
+                    </li>
+                </ul>
+                
+                <!-- Hidden publications (to be shown when "View More" is clicked) -->
+                <ul class="publication-list hidden-publications" id="hidden-publications" style="display: none;">
                     <li class="publication-item">
                         <h3>Ch. 19: An Adaptive AutoLearning System for Camera-Based Facial Recognition</h3>
                         <div class="publication-authors">Phuong Anh Nguyen, <strong>Tung Son Vu</strong>, Thuan Minh Bui, Ngoc Le Anh</div>
@@ -604,6 +681,25 @@
                         </div>
                     </li>
                 </ul>
+                
+                <div class="view-more-container" style="text-align: center; margin-top: 20px;">
+                    <button id="view-more-btn" class="btn" onclick="togglePublications()">View More Publications</button>
+                </div>
+                
+                <script>
+                    function togglePublications() {
+                        const hiddenPublications = document.getElementById('hidden-publications');
+                        const viewMoreBtn = document.getElementById('view-more-btn');
+                        
+                        if (hiddenPublications.style.display === 'none') {
+                            hiddenPublications.style.display = 'block';
+                            viewMoreBtn.textContent = 'Show Less';
+                        } else {
+                            hiddenPublications.style.display = 'none';
+                            viewMoreBtn.textContent = 'View More Publications';
+                        }
+                    }
+                </script>
             </div>
         </section>
     </main>
@@ -620,7 +716,7 @@
             <div class="contact-info">
                 <p>Email: your.email@example.com</p>
                 <p>Location: Hanoi, Vietnam</p>
-                <p>&copy; 2025 Your Name. All rights reserved.</p>
+                <p>&copy; 2025 Vũ Sơn Tùng. All rights reserved.</p>
             </div>
         </div>
     </footer>
