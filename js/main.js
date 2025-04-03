@@ -2,18 +2,23 @@
  * Main JavaScript file for the portfolio website
  */
 
-// Toggle hidden publications
+// Publications toggle functionality
 document.addEventListener('DOMContentLoaded', function() {
+    // Make sure hidden publications are actually hidden on page load
+    const hiddenPublications = document.getElementById('hidden-publications');
+    if (hiddenPublications) {
+        hiddenPublications.style.display = 'none';
+    }
+    
+    // Add click event listener for the view more button
     const viewMoreBtn = document.getElementById('view-more-publications-btn');
     if (viewMoreBtn) {
         viewMoreBtn.addEventListener('click', function() {
-            const hiddenPublications = document.getElementById('hidden-publications');
-            
-            if (hiddenPublications.classList.contains('hidden')) {
-                hiddenPublications.classList.remove('hidden');
+            if (hiddenPublications.style.display === 'none') {
+                hiddenPublications.style.display = 'block';
                 viewMoreBtn.textContent = 'Show Less';
             } else {
-                hiddenPublications.classList.add('hidden');
+                hiddenPublications.style.display = 'none';
                 viewMoreBtn.textContent = 'View More Publications';
             }
         });
