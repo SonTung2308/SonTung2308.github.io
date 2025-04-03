@@ -1,0 +1,121 @@
+/* Layout components */
+
+/* Header/Navbar */
+.navbar {
+    background-color: var(--primary-dark);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #333;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Main profile section */
+.profile-section {
+    display: flex;
+    padding: 4rem 0;
+}
+
+.profile-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 2rem;
+    border: 3px solid var(--accent-red);
+}
+
+.profile-content {
+    flex: 1;
+}
+
+/* Bio info card grid */
+.bio-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Section styling */
+.section {
+    padding: 3rem 0;
+    border-top: 1px solid #333;
+}
+
+/* Interests section */
+.interests-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+/* Projects section */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Publications section */
+.publications-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Timeline for employment */
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--accent-red);
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 70px;
+    margin-bottom: 3rem;
+}
+
+/* Footer section */
+.footer {
+    background-color: var(--secondary-dark);
+    padding: 3rem 0;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.footer-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    gap: 2rem;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+.view-more-container {
+    text-align: center;
+    margin-top: 1.5rem;
+}

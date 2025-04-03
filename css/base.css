@@ -1,0 +1,37 @@
+/* Base styles and variables */
+:root {
+    --primary-dark: #1e2124;
+    --secondary-dark: #282c34;
+    --accent-red: #c41e3a;
+    --text-light: #f0f0f0;
+    --text-gray: #bbbbbb;
+    --card-bg: #2a2e36;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-light);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hidden {
+    display: none;
+}

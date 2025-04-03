@@ -3,759 +3,367 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio</title>
-    <style>
-        :root {
-            --primary-dark: #1a1a1a;
-            --secondary-dark: #252525;
-            --accent-red: #c41e3a;
-            --text-light: #f0f0f0;
-            --text-gray: #bbbbbb;
-            --card-bg: #2a2a2a;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: var(--primary-dark);
-            color: var(--text-light);
-            line-height: 1.6;
-        }
-        
-        a {
-            text-decoration: none;
-            color: var(--text-light);
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        header {
-            background-color: var(--secondary-dark);
-            padding: 2rem 0;
-            text-align: center;
-            margin-bottom: 2rem;
-            border-bottom: 3px solid var(--accent-red);
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        h1 span {
-            color: var(--accent-red);
-        }
-        
-        .subtitle {
-            color: var(--text-gray);
-            font-size: 1.2rem;
-        }
-        
-        nav {
-            background-color: var(--primary-dark);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
-        
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin: 0 1rem;
-        }
-        
-        nav ul li a {
-            padding: 0.5rem 1rem;
-            border-radius: 3px;
-        }
-        
-        nav ul li a:hover {
-            background-color: var(--accent-red);
-            color: var(--text-light);
-        }
-        
-        section {
-            padding: 3rem 0;
-            border-bottom: 1px solid #333;
-        }
-        
-        h2 {
-            font-size: 2rem;
-            color: var(--accent-red);
-            margin-bottom: 2rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--accent-red);
-            display: inline-block;
-        }
-        
-        .bio-container {
-            display: flex;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .bio-image {
-            flex: 0 0 300px;
-        }
-        
-        .bio-image img {
-            width: 100%;
-            border-radius: 5px;
-            border: 3px solid var(--accent-red);
-        }
-        
-        .bio-text {
-            flex: 1;
-        }
-        
-        .bio-text p {
-            margin-bottom: 1rem;
-            color: var(--text-gray);
-        }
-        
-        .bio-info {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-        
-        .bio-item {
-            background-color: var(--card-bg);
-            padding: 1rem;
-            border-radius: 5px;
-            border-left: 3px solid var(--accent-red);
-        }
-        
-        .bio-item h3 {
-            color: var(--accent-red);
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-        }
-        
-        .bio-item h3 i {
-            margin-right: 0.5rem;
-        }
-        
-        .bio-item p {
-            margin-bottom: 0;
-        }
-        
-        .bio-item a {
-            color: var(--accent-red);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .bio-item a:hover {
-            text-decoration: underline;
-        }
-        
-        .interests-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-        
-        .interest-card {
-            background-color: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 5px;
-            border-left: 4px solid var(--accent-red);
-        }
-        
-        .interest-card h3 {
-            color: var(--accent-red);
-            margin-bottom: 1rem;
-        }
-        
-        .interest-card p, .interest-card ul {
-            color: var(--text-gray);
-        }
-        
-        .interest-card ul {
-            margin-left: 1.5rem;
-            margin-top: 1rem;
-        }
-        
-        .awards-container {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-        
-        .award-item {
-            background-color: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 5px;
-            display: flex;
-            gap: 1.5rem;
-            border-left: 4px solid var(--accent-red);
-        }
-        
-        .award-icon {
-            flex: 0 0 60px;
-            height: 60px;
-            background-color: rgba(196, 30, 58, 0.15);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.8rem;
-            color: var(--accent-red);
-        }
-        
-        .award-content {
-            flex: 1;
-        }
-        
-        .award-content h3 {
-            color: var(--text-light);
-            margin-bottom: 0.5rem;
-        }
-        
-        .award-date {
-            color: var(--accent-red);
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-        
-        .award-description {
-            color: var(--text-gray);
-        }
-        
-        .projects-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-        
-        .project-card {
-            background-color: var(--card-bg);
-            border-radius: 5px;
-            overflow: hidden;
-        }
-        
-        .project-img {
-            height: 200px;
-            overflow: hidden;
-        }
-        
-        .project-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .project-info {
-            padding: 1.5rem;
-        }
-        
-        .project-info h3 {
-            color: var(--accent-red);
-            margin-bottom: 1rem;
-        }
-        
-        .project-info p {
-            color: var(--text-gray);
-            margin-bottom: 1.5rem;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: var(--accent-red);
-            color: var(--text-light);
-            padding: 0.5rem 1rem;
-            border-radius: 3px;
-        }
-        
-        .btn:hover {
-            opacity: 0.9;
-        }
-        
-        .news-list {
-            list-style: none;
-        }
-        
-        .news-item {
-            background-color: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 5px;
-            margin-bottom: 1.5rem;
-            border-left: 4px solid var(--accent-red);
-        }
-        
-        .news-date {
-            color: var(--accent-red);
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-        
-        .news-item p {
-            color: var(--text-gray);
-        }
-        
-        .publication-list {
-            list-style: none;
-        }
-        
-        .publication-item {
-            background-color: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 5px;
-            margin-bottom: 1.5rem;
-            border-left: 4px solid var(--accent-red);
-        }
-        
-        .publication-item h3 {
-            color: var(--text-light);
-            margin-bottom: 0.5rem;
-        }
-        
-        .publication-authors {
-            font-style: italic;
-            color: var(--text-gray);
-            margin-bottom: 0.5rem;
-        }
-        
-        .publication-venue {
-            color: var(--accent-red);
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-        
-        .publication-item p {
-            color: var(--text-gray);
-            margin-bottom: 1rem;
-        }
-        
-        .publication-links a {
-            display: inline-block;
-            margin-right: 1rem;
-            color: var(--accent-red);
-        }
-        
-        .publication-links a:hover {
-            text-decoration: underline;
-        }
-        
-        footer {
-            background-color: var(--secondary-dark);
-            padding: 2rem 0;
-            text-align: center;
-            margin-top: 2rem;
-        }
-        
-        .social-links {
-            margin-bottom: 1rem;
-        }
-        
-        .social-links a {
-            margin: 0 0.5rem;
-            font-size: 1.5rem;
-        }
-        
-        .social-links a:hover {
-            color: var(--accent-red);
-        }
-        
-        .contact-info p {
-            color: var(--text-gray);
-            margin-bottom: 0.5rem;
-        }
-        
-        @media (max-width: 768px) {
-            .bio-container {
-                flex-direction: column;
-            }
-            
-            .bio-image {
-                max-width: 300px;
-                margin: 0 auto;
-            }
-            
-            .bio-info {
-                grid-template-columns: 1fr;
-            }
-            
-            .interests-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .award-item {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-            
-            .award-icon {
-                margin-bottom: 1rem;
-            }
-            
-            nav ul {
-                flex-wrap: wrap;
-            }
-            
-            nav ul li {
-                margin: 0.5rem;
-            }
-        }
-    </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Vũ Sơn Tùng - AI Research Assistant</title>
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Vũ Sơn<span>Tùng</span></h1>
-            <p class="subtitle">AI Research Assistant & Developer</p>
-        </div>
-    </header>
-    
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="#biography">Biography</a></li>
-                <li><a href="#interests">Interests</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#awards">Awards</a></li>
-                <li><a href="#news">Recent News</a></li>
-                <li><a href="#publications">Publications</a></li>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="#" class="navbar-brand">Vũ Sơn<span>Tùng</span>'s Website</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#about" class="nav-link">About me</a></li>
+                <li class="nav-item"><a href="#news" class="nav-link">Recent news</a></li>
+                <li class="nav-item"><a href="#publications" class="nav-link">Publications</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="#employment" class="nav-link">Employment</a></li>
+                <li class="nav-item"><a href="#awards" class="nav-link">Awards</a></li>
+                <li class="nav-item"><a href="#interests" class="nav-link">Interests</a></li>
             </ul>
         </div>
     </nav>
+
+    <!-- Profile Section -->
+    <section id="about" class="profile-section container">
+        <div class="profile-image">
+            <img src="images/avatar.jpg" alt="Vũ Sơn Tùng">
+        </div>
+        <div class="profile-content">
+            <h1 class="profile-title">Vũ Sơn Tùng</h1>
+            <h3 class="profile-subtitle">AI Research Assistant</h3>
+            <p class="profile-bio">Hello! I'm Vũ Sơn Tùng, a researcher assistant and developer in AI and computer vision. My focus is on developing innovative solutions using advanced AI techniques, particularly in the areas of talking face synthesis and indoor navigation systems.</p>
+            
+            <div class="bio-info">
+                <div class="bio-item">
+                    <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                    <p>Bachelor of Information Technology (2020 - Present)<br>
+                    <a href="https://fit-hau.edu.vn/" target="_blank">Hanoi Architectural University</a></p>
+                </div>
+                
+                <div class="bio-item">
+                    <h3><i class="fas fa-flask"></i> Research Labs</h3>
+                    <p><a href="https://iec.ptit.edu.vn/" target="_blank">PTIT IEC Lab</a><br>
+                    <a href="https://swinburne-vn.edu.vn/" target="_blank">Swinburne Innovation Space</a></p>
+                </div>
+                
+                <div class="bio-item">
+                    <h3><i class="fas fa-briefcase"></i> Current Position</h3>
+                    <p>AI Researcher at <a href="https://swinburne-vn.edu.vn/" target="_blank">Swinburne Innovation Space</a><br>
+                    Research Assistant at <a href="https://iec.ptit.edu.vn/" target="_blank">PTIT IEC Lab</a></p>
+                </div>
+                
+                <div class="bio-item">
+                    <h3><i class="fas fa-code"></i> Skills</h3>
+                    <p>Deep Learning, Computer Vision, AI Applications<br>
+                    Talking Face Synthesis, Indoor Navigation</p>
+                </div>
+            </div>
+            
+            <div class="social-icons">
+                <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-google-scholar"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent News Section -->
+    <section id="news" class="section container">
+        <h2 class="section-title">Recent News</h2>
+        <ul class="news-list">
+            <li class="news-item">
+                <div class="news-date">April 1, 2025</div>
+                <p>Two of our papers have been accepted at MUE & FutureTech 2025: "MetaAdvisor" (both proceedings and LNEE) and "Federated Learning for Greenhouse Temperature Prediction" (LNEE)!</p>
+            </li>
+            <li class="news-item">
+                <div class="news-date">February 14, 2025</div>
+                <p>Two papers on Navigation indoor and Chatbot are accepted to ICISN 2025. Congrats to all authors!</p>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="section container">
+        <h2 class="section-title">Publications</h2>
+        <div class="publications-container">
+            <div class="publication-card">
+                <h3>Federated Learning for Greenhouse Temperature Prediction: A Privacy-Preserving Approach Using N-BEATS</h3>
+                <div class="publication-authors">Ha Trang, Phuong Anh Nguyen, <strong>Tung Vu</strong>, Ngoc Le</div>
+                <div class="publication-venue">Lecture Notes in Electrical Engineering (LNEE), MUE & FutureTech 2025</div>
+                <p>This paper presents a privacy-preserving approach to greenhouse temperature prediction using Federated Learning with the N-BEATS algorithm, enabling collaborative model training while maintaining data privacy across multiple greenhouse facilities.</p>
+                <div class="publication-links">
+                    <a href="#" class="publication-link"><i class="fas fa-file-pdf"></i> PDF</a>
+                    <a href="#" class="publication-link"><i class="fas fa-link"></i> DOI</a>
+                    <a href="#" class="publication-link"><i class="fas fa-code"></i> Code</a>
+                </div>
+            </div>
+            
+            <div class="publication-card">
+                <h3>MetaAdvisor: An AI-Driven Metahuman System for Personalized Admissions Counseling</h3>
+                <div class="publication-authors"><strong>Tung Vu</strong>, Phuong Anh Nguyen, Ngoc Le</div>
+                <div class="publication-venue">Lecture Notes in Electrical Engineering (LNEE), MUE & FutureTech 2025</div>
+                <p>This paper presents MetaAdvisor, an innovative AI-driven metahuman system designed for personalized admissions counseling, combining advanced talking face technology with natural language processing to create interactive and engaging virtual counselors for prospective students.</p>
+                <div class="publication-links">
+                    <a href="#" class="publication-link"><i class="fas fa-file-pdf"></i> PDF</a>
+                    <a href="#" class="publication-link"><i class="fas fa-link"></i> DOI</a>
+                    <a href="#" class="publication-link"><i class="fas fa-code"></i> Code</a>
+                </div>
+            </div>
+            
+            <div class="publication-card">
+                <h3>MetaAdvisor: An AI-Driven Metahuman System for Personalized Admissions Counseling</h3>
+                <div class="publication-authors"><strong>Tung Vu</strong>, Phuong Anh Nguyen, Ngoc Le</div>
+                <div class="publication-venue">Conference Proceedings, MUE & FutureTech 2025</div>
+                <p>A conference version of our research on MetaAdvisor, detailing the implementation and evaluation of this AI-driven metahuman system for providing personalized admissions counseling to prospective university students.</p>
+                <div class="publication-links">
+                    <a href="#" class="publication-link"><i class="fas fa-file-pdf"></i> PDF</a>
+                    <a href="#" class="publication-link"><i class="fas fa-link"></i> DOI</a>
+                    <a href="#" class="publication-link"><i class="fas fa-code"></i> Code</a>
+                </div>
+            </div>
+            
+            <div class="publication-card">
+                <h3>An Innovative Transformer Model for Indoor Positioning Using WiFi Fingerprinting</h3>
+                <div class="publication-authors">Phuong Anh Nguyen, <strong>Tung Vu</strong>, Ngoc Le</div>
+                <div class="publication-venue">Lecture Notes in Networks and Systems, 2025</div>
+                <p>This paper proposes a novel transformer-based approach to enhance indoor positioning accuracy using WiFi fingerprinting technology, significantly improving localization performance in complex indoor environments.</p>
+                <div class="publication-links">
+                    <a href="#" class="publication-link"><i class="fas fa-file-pdf"></i> PDF</a>
+                    <a href="#" class="publication-link"><i class="fas fa-link"></i> DOI</a>
+                    <a href="#" class="publication-link"><i class="fas fa-code"></i> Code</a>
+                </div>
+            </div>
+            
+            <div class="publication-card">
+                <h3>Dynamic LLM Selection for Humanoid Robots: A Hybrid Approach with Edge Caching</h3>
+                <div class="publication-authors">Phuong Anh Nguyen, <strong>Tung Vu</strong>, Ngoc Le</div>
+                <div class="publication-venue">Lecture Notes in Networks and Systems, 2025</div>
+                <p>This study presents a hybrid approach for dynamic selection of Large Language Models in humanoid robots, utilizing edge caching to optimize performance and reduce latency in human-robot interactions.</p>
+                <div class="publication-links">
+                    <a href="#" class="publication-link"><i class="fas fa-file-pdf"></i> PDF</a>
+                    <a href="#" class="publication-link"><i class="fas fa-link"></i> DOI</a>
+                    <a href="#" class="publication-link"><i class="fas fa-code"></i> Code</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="view-more-container">
+            <button id="view-more-btn" class="view-more-btn" onclick="togglePublications()">View More Publications</button>
+        </div>
+        
+        <div id="hidden-publications" class="publications-container hidden">
+            <div class="publication-card">
+                <h3>Ch. 19: An Adaptive AutoLearning System for Camera-Based Facial Recognition</h3>
+                <div class="publication-authors">Phuong Anh Nguyen, <strong>Tung Son Vu</strong>, Thuan Minh Bui, Ngoc Le Anh</div>
+                <div class="publication-venue">Book Chapter in "Navigating Computing Challenges for a Sustainable World", 2024</div>
+                <p>This book chapter introduces an adaptive auto-learning system for camera-based facial recognition, combining advanced computer vision techniques with machine learning to create a robust and privacy-conscious facial recognition solution.</p>
+                <div class="publication-links">
+                    <a href="#" class="publication-link"><i class="fas fa-book"></i> Book</a>
+                    <a href="#" class="publication-link"><i class="fas fa-link"></i> DOI</a>
+                </div>
+            </div>
+            
+            <div class="publication-card">
+                <h3>Ch. 10: Federated Learning for Greenhouse Temperature Prediction Using LSTM: A Privacy-Preserving Approach With Gradient-Based Aggregation</h3>
+                <div class="publication-authors">Phuong Anh Nguyen, Trang Ha, <strong>Tung Son Vu</strong>, Ngoc Le Anh</div>
+                <div class="publication-venue">Book Chapter in "Navigating Computing Challenges for a Sustainable World", 2024</div>
+                <p>This book chapter explores the application of federated learning for greenhouse temperature prediction using LSTM networks, emphasizing a privacy-preserving approach with gradient-based aggregation techniques.</p>
+                <div class="publication-links">
+                    <a href="#" class="publication-link"><i class="fas fa-book"></i> Book</a>
+                    <a href="#" class="publication-link"><i class="fas fa-link"></i> DOI</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section container">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-container">
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="images/alda.jpeg" alt="Alda AI PTIT">
+                </div>
+                <div class="project-info">
+                    <h3>Alda AI PTIT</h3>
+                    <p>An advanced artificial intelligence system developed at PTIT that integrates natural language processing and knowledge management capabilities.</p>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="images/chatbot.png" alt="AI-based Smart Admissions">
+                </div>
+                <div class="project-info">
+                    <h3>AI-based Smart Admissions System</h3>
+                    <p>Developed for Swinburne Vietnam, this system uses AI to streamline and enhance the university admissions process.</p>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="images/robot.png" alt="RobotGPT Application">
+                </div>
+                <div class="project-info">
+                    <h3>RobotGPT Application</h3>
+                    <p>Created at Swinburne Vietnam Innovation Space, this application integrates large language models with robotics to enable natural human-robot interaction.</p>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
     
-    <main>
-        <section id="biography">
-            <div class="container">
-                <h2>Biography</h2>
-                <div class="bio-container">
-                    <div class="bio-image">
-                        <img src="images/avatar.jpg" alt="Profile Photo">
-                    </div>
-                    <div class="bio-text">
-                        <p>Hello! I'm Vũ Sơn Tùng, an Ai research assistant and developer in On-Device Ai.</p>
-                        
-                        <div class="bio-info">
-                                <div class="bio-item">
-                                    <h3><i class="fas fa-graduation-cap"></i> Education</h3>
-                                    <p>Bachelor of Information Technology (2020 - Present)<br>
-                                    <a href="https://fit-hau.edu.vn/" target="_blank">Hanoi Architectural University</a></p>
-                                </div>
-                                
-                                <div class="bio-item">
-                                    <h3><i class="fas fa-flask"></i> Research Labs</h3>
-                                    <p><a href="https://iec.ptit.edu.vn/" target="_blank">PTIT IEC Lab</a><br>
-                                    <a href="https://swinburne-vn.edu.vn/" target="_blank">Swinburne Innovation Space</a></p>
-                                </div>
-                                
-                                <div class="bio-item">
-                                    <h3><i class="fas fa-briefcase"></i> Current Position</h3>
-                                    <p>AI Researcher at <a href="https://swinburne-vn.edu.vn/" target="_blank">Swinburne Innovation Space</a><br>
-                                    Research Assistant at <a href="https://iec.ptit.edu.vn/" target="_blank">PTIT IEC Lab</a></p>
-                                </div>
-                            
-                            <div class="bio-item">
-                                <h3><i class="fas fa-code"></i> Skills</h3>
-                                <p>Deep Learning, Computer Vision, AI Applications<br>
-                                Talking Face Synthesis, Indoor Navigation</p>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Employment Section -->
+    <section id="employment" class="section container">
+        <h2 class="section-title">Employment</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-badge">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <div class="timeline-content">
+                    <h3>Research Assistant & Teaching Assistant</h3>
+                    <div class="timeline-period">October 2023 - Present</div>
+                    <div class="timeline-institution">Swinburne Innovation Space</div>
+                    <p>Working under the supervision of Dr. Le Anh Ngoc</p>
                 </div>
             </div>
-        </section>
-        
-        <section id="interests">
-            <div class="container">
-                <h2>Research Interests</h2>
-                <div class="interests-container">
-                    <div class="interest-card">
-                        <h3>Talking Face & Metahuman Technology</h3>
-                        <p>My research in this area focuses on developing realistic talking face synthesis using deep learning and computer vision techniques. I work on creating metahumans with natural facial expressions, lip synchronization, and emotional responses.</p>
-                        <ul>
-                            <li>Audio-driven facial animation</li>
-                            <li>Emotion-aware talking face generation</li>
-                            <li>Cross-identity facial reenactment</li>
-                            <li>Real-time metahuman rendering</li>
-                            <li>Identity preservation in facial animation</li>
-                        </ul>
-                    </div>
-                    <div class="interest-card">
-                        <h3>Indoor Navigation</h3>
-                        <p>My work in indoor navigation systems addresses the challenges of precise localization and wayfinding in complex indoor environments where GPS signals are unavailable or unreliable.</p>
-                        <ul>
-                            <li>Vision-based indoor positioning</li>
-                            <li>Map generation and spatial understanding</li>
-                            <li>User-centric navigation interface design</li>
-                            <li>Machine learning for path optimization</li>
-                            <li>Multi-sensor fusion for robust localization</li>
-                        </ul>
-                    </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-badge">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <div class="timeline-content">
+                    <h3>Research Assistant</h3>
+                    <div class="timeline-period">September 2023 - Present</div>
+                    <div class="timeline-institution">PTIT IEC Lab</div>
+                    <p>Working under the supervision of Dr. Tran Tien Cong</p>
                 </div>
             </div>
-        </section>
-        
-        <section id="awards">
-            <div class="container">
-                <h2>Awards & Achievements</h2>
-                <div class="awards-container">
-                    <div class="award-item">
-                        <div class="award-icon">
-                            <i class="fas fa-trophy"></i>
-                        </div>
-                        <div class="award-content">
-                            <h3>Top 2 Finalist - Vietnam Intel® AI Global Impact Festival 2024</h3>
-                            <p class="award-date">2024</p>
-                            <p class="award-description">Recognized among the top AI projects in Vietnam at the prestigious Intel® AI Global Impact Festival, demonstrating excellence in innovative artificial intelligence solutions with global impact potential.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="award-item">
-                        <div class="award-icon">
-                            <i class="fas fa-medal"></i>
-                        </div>
-                        <div class="award-content">
-                            <h3>First Prize - Swinburne Hackathon</h3>
-                            <p class="award-date">2023</p>
-                            <p class="award-description">Awarded first place at the Swinburne Hackathon for developing an innovative solution that addressed real-world challenges through creative problem-solving and effective implementation within a limited timeframe.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="award-item">
-                        <div class="award-icon">
-                            <i class="fas fa-award"></i>
-                        </div>
-                        <div class="award-content">
-                            <h3>First Prize - University-level Student Scientific Research Competition</h3>
-                            <p class="award-date">2022</p>
-                            <p class="award-description">Recognized with the top award in the university's student scientific research competition for outstanding contribution to academic research, demonstrating exceptional analytical skills and innovative thinking.</p>
-                        </div>
-                    </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-badge">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <div class="timeline-content">
+                    <h3>Research Intern</h3>
+                    <div class="timeline-period">December 2022 - August 2023</div>
+                    <div class="timeline-institution">PTIT AI Lab</div>
+                    <p>Working under the supervision of Assoc. Prof. Pham Van Cuong</p>
                 </div>
             </div>
-        </section>
-        
-        <section id="projects">
-            <div class="container">
-                <h2>Projects</h2>
-                <div class="projects-container">
-                    <div class="project-card">
-                        <div class="project-img">
-                            <img src="images/alda.jpeg" alt="Alda AI PTIT">
-                        </div>
-                        <div class="project-info">
-                            <h3>Alda AI PTIT</h3>
-                            <p>An advanced artificial intelligence system developed at PTIT that integrates natural language processing and knowledge management capabilities.</p>
-                            <a href="#" class="btn">View Project</a>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-img">
-                            <img src="images/chatbot.png" alt="AI-based Smart Admissions">
-                        </div>
-                        <div class="project-info">
-                            <h3>AI-based Smart Admissions System</h3>
-                            <p>Developed for Swinburne Vietnam, this system uses AI to streamline and enhance the university admissions process.</p>
-                            <a href="#" class="btn">View Project</a>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-img">
-                            <img src="images/robot.png" alt="RobotGPT Application">
-                        </div>
-                        <div class="project-info">
-                            <h3>RobotGPT Application</h3>
-                            <p>Created at Swinburne Vietnam Innovation Space, this application integrates large language models with robotics to enable natural human-robot interaction.</p>
-                            <a href="#" class="btn">View Project</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="news">
-            <div class="container">
-                <h2>Recent News</h2>
-                <ul class="news-list">
-                    <li class="news-item">
-                        <div class="news-date">April 1, 2025</div>
-                        <p>Two of our papers have been accepted at MUE & FutureTech 2025: "MetaAdvisor" (both proceedings and LNEE) and "Federated Learning for Greenhouse Temperature Prediction" (LNEE)!</p>
-                    </li>
-                    <li class="news-item">
-                        <div class="news-date">Feb 14, 2025</div>
-                        <p>Two papers on Navigation indoor and Chatbot are accepted to ICISN 2025. Congrats to all authors!</p>
-                    </li>
-                </ul>
-            </div>
-        </section>
-        
-        <section id="publications">
-            <div class="container">
-                <h2>Publications</h2>
-                <ul class="publication-list" id="publication-list">
-                    <!-- 2025 Publications -->
-                    <li class="publication-item">
-                        <h3>Federated Learning for Greenhouse Temperature Prediction: A Privacy-Preserving Approach Using N-BEATS</h3>
-                        <div class="publication-authors">Ha Trang, Phuong Anh Nguyen, <strong>Tung Vu</strong>, Ngoc Le</div>
-                        <div class="publication-venue">Lecture Notes in Electrical Engineering (LNEE), MUE & FutureTech 2025</div>
-                        <p>This paper presents a privacy-preserving approach to greenhouse temperature prediction using Federated Learning with the N-BEATS algorithm, enabling collaborative model training while maintaining data privacy across multiple greenhouse facilities.</p>
-                        <div class="publication-links">
-                            <a href="#"><i class="fas fa-file-pdf"></i> PDF</a>
-                            <a href="#"><i class="fas fa-link"></i> DOI</a>
-                            <a href="#"><i class="fas fa-code"></i> Code</a>
-                        </div>
-                    </li>
-                    
-                    <li class="publication-item">
-                        <h3>MetaAdvisor: An AI-Driven Metahuman System for Personalized Admissions Counseling</h3>
-                        <div class="publication-authors"><strong>Tung Vu</strong>, Phuong Anh Nguyen, Ngoc Le</div>
-                        <div class="publication-venue">Lecture Notes in Electrical Engineering (LNEE), MUE & FutureTech 2025</div>
-                        <p>This paper presents MetaAdvisor, an innovative AI-driven metahuman system designed for personalized admissions counseling, combining advanced talking face technology with natural language processing to create interactive and engaging virtual counselors for prospective students.</p>
-                        <div class="publication-links">
-                            <a href="#"><i class="fas fa-file-pdf"></i> PDF</a>
-                            <a href="#"><i class="fas fa-link"></i> DOI</a>
-                            <a href="#"><i class="fas fa-code"></i> Code</a>
-                        </div>
-                    </li>
-                    <li class="publication-item">
-                        <h3>An Innovative Transformer Model for Indoor Positioning Using WiFi Fingerprinting</h3>
-                        <div class="publication-authors">Phuong Anh Nguyen, <strong>Tung Vu</strong>, Ngoc Le</div>
-                        <div class="publication-venue">Lecture Notes in Networks and Systems, 2025</div>
-                        <p>This paper proposes a novel transformer-based approach to enhance indoor positioning accuracy using WiFi fingerprinting technology, significantly improving localization performance in complex indoor environments.</p>
-                        <div class="publication-links">
-                            <a href="#"><i class="fas fa-file-pdf"></i> PDF</a>
-                            <a href="#"><i class="fas fa-link"></i> DOI</a>
-                            <a href="#"><i class="fas fa-code"></i> Code</a>
-                        </div>
-                    </li>
-                    
-                    <li class="publication-item">
-                        <h3>Dynamic LLM Selection for Humanoid Robots: A Hybrid Approach with Edge Caching</h3>
-                        <div class="publication-authors">Phuong Anh Nguyen, <strong>Tung Vu</strong>, Ngoc Le</div>
-                        <div class="publication-venue">Lecture Notes in Networks and Systems, 2025</div>
-                        <p>This study presents a hybrid approach for dynamic selection of Large Language Models in humanoid robots, utilizing edge caching to optimize performance and reduce latency in human-robot interactions.</p>
-                        <div class="publication-links">
-                            <a href="#"><i class="fas fa-file-pdf"></i> PDF</a>
-                            <a href="#"><i class="fas fa-link"></i> DOI</a>
-                            <a href="#"><i class="fas fa-code"></i> Code</a>
-                        </div>
-                    </li>
-                    
-                    <!-- 2024 Publications (showing first 3) -->
-                    <li class="publication-item">
-                        <h3>Federated Learning Architecture for Greenhouse Temperature Forecasting Using LSTM Networks</h3>
-                        <div class="publication-authors">Phuong Anh Nguyen, Trang Ha, Satyam Mishra, <strong>Tung Vu</strong>, Anh-Ngoc Le, Do-Hyeun Kim</div>
-                        <div class="publication-venue">The 8th International Conference on Interdisciplinary Research on Computer Science, Psychology, and Education (ICICPE' 2024), 2024</div>
-                        <p>This paper presents a federated learning architecture for greenhouse temperature forecasting using LSTM networks, supported by the National Research Foundation of Korea and the Ministry of Education.</p>
-                        <div class="publication-links">
-                            <a href="#"><i class="fas fa-file-pdf"></i> PDF</a>
-                            <a href="#"><i class="fas fa-link"></i> DOI</a>
-                            <a href="#"><i class="fas fa-code"></i> Code</a>
-                        </div>
-                    </li>
-                    
-                    <li class="publication-item">
-                        <h3>An IoT architecture using federated learning for smart greenhouse</h3>
-                        <div class="publication-authors">Trang Ha, Phuong Anh Nguyen, <strong>Tung Vu</strong>, Anh-Ngoc Le</div>
-                        <div class="publication-venue">Lecture Notes in Electrical Engineering, 2024</div>
-                        <p>This paper presents an innovative IoT architecture that leverages federated learning for smart greenhouse applications, enhancing data privacy while enabling effective monitoring and control systems.</p>
-                        <div class="publication-links">
-                            <a href="#"><i class="fas fa-file-pdf"></i> PDF</a>
-                            <a href="#"><i class="fas fa-link"></i> DOI</a>
-                            <a href="#"><i class="fas fa-code"></i> Code</a>
-                        </div>
-                    </li>
-                    
-                    <li class="publication-item">
-                        <h3>Advancing Geopolitical Map Analysis: An Intelligent System for Territorial Integrity Verification</h3>
-                        <div class="publication-authors"><strong>Tung Vu</strong>, Hung Nguyen, Nam Nguyen, Cong Tran</div>
-                        <div class="publication-venue">Communications in Computer and Information Science, 2024</div>
-                        <p>This research introduces an intelligent system for automated territorial integrity verification in geopolitical maps, employing advanced computer vision and machine learning techniques.</p>
-                        <div class="publication-links">
-                            <a href="#"><i class="fas fa-file-pdf"></i> PDF</a>
-                            <a href="#"><i class="fas fa-link"></i> DOI</a>
-                            <a href="#"><i class="fas fa-code"></i> Code</a>
-                        </div>
-                    </li>
-                </ul>
-                
-                <!-- Hidden publications (to be shown when "View More" is clicked) -->
-                <ul class="publication-list hidden-publications" id="hidden-publications" style="display: none;">
-                    <li class="publication-item">
-                        <h3>Ch. 19: An Adaptive AutoLearning System for Camera-Based Facial Recognition</h3>
-                        <div class="publication-authors">Phuong Anh Nguyen, <strong>Tung Son Vu</strong>, Thuan Minh Bui, Ngoc Le Anh</div>
-                        <div class="publication-venue">Book Chapter in "Navigating Computing Challenges for a Sustainable World", 2024</div>
-                        <p>This book chapter introduces an adaptive auto-learning system for camera-based facial recognition, combining advanced computer vision techniques with machine learning to create a robust and privacy-conscious facial recognition solution.</p>
-                        <div class="publication-links">
-                            <a href="#"><i class="fas fa-book"></i> Book</a>
-                            <a href="#"><i class="fas fa-link"></i> DOI</a>
-                        </div>
-                    </li>
-                    
-                    <li class="publication-item">
-                        <h3>Ch. 10: Federated Learning for Greenhouse Temperature Prediction Using LSTM: A Privacy-Preserving Approach With Gradient-Based Aggregation</h3>
-                        <div class="publication-authors">Phuong Anh Nguyen, Trang Ha, <strong>Tung Son Vu</strong>, Ngoc Le Anh</div>
-                        <div class="publication-venue">Book Chapter in "Navigating Computing Challenges for a Sustainable World", 2024</div>
-                        <p>This book chapter explores the application of federated learning for greenhouse temperature prediction using LSTM networks, emphasizing a privacy-preserving approach with gradient-based aggregation techniques.</p>
-                        <div class="publication-links">
-                            <a href="#"><i class="fas fa-book"></i> Book</a>
-                            <a href="#"><i class="fas fa-link"></i> DOI</a>
-                        </div>
-                    </li>
-                </ul>
-                
-                <div class="view-more-container" style="text-align: center; margin-top: 20px;">
-                    <button id="view-more-btn" class="btn" onclick="togglePublications()">View More Publications</button>
-                </div>
-                
-                <script>
-                    function togglePublications() {
-                        const hiddenPublications = document.getElementById('hidden-publications');
-                        const viewMoreBtn = document.getElementById('view-more-btn');
-                        
-                        if (hiddenPublications.style.display === 'none') {
-                            hiddenPublications.style.display = 'block';
-                            viewMoreBtn.textContent = 'Show Less';
-                        } else {
-                            hiddenPublications.style.display = 'none';
-                            viewMoreBtn.textContent = 'View More Publications';
-                        }
-                    }
-                </script>
-            </div>
-        </section>
-    </main>
+        </div>
+    </section>
     
-    <footer>
+    <!-- Awards Section -->
+    <section id="awards" class="section container">
+        <h2 class="section-title">Awards & Achievements</h2>
+        <div class="awards-container">
+            <div class="award-item">
+                <div class="award-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <div class="award-content">
+                    <h3>Top 2 Finalist - Vietnam Intel® AI Global Impact Festival 2024</h3>
+                    <p class="award-date">2024</p>
+                    <p>Recognized among the top AI projects in Vietnam at the prestigious Intel® AI Global Impact Festival, demonstrating excellence in innovative artificial intelligence solutions with global impact potential.</p>
+                </div>
+            </div>
+            
+            <div class="award-item">
+                <div class="award-icon">
+                    <i class="fas fa-medal"></i>
+                </div>
+                <div class="award-content">
+                    <h3>First Prize - Swinburne Hackathon</h3>
+                    <p class="award-date">2023</p>
+                    <p>Awarded first place at the Swinburne Hackathon for developing an innovative solution that addressed real-world challenges through creative problem-solving and effective implementation within a limited timeframe.</p>
+                </div>
+            </div>
+            
+            <div class="award-item">
+                <div class="award-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <div class="award-content">
+                    <h3>First Prize - University-level Student Scientific Research Competition</h3>
+                    <p class="award-date">2022</p>
+                    <p>Recognized with the top award in the university's student scientific research competition for outstanding contribution to academic research, demonstrating exceptional analytical skills and innovative thinking.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interests Section -->
+    <section id="interests" class="section container">
+        <h2 class="section-title">Research Interests</h2>
+        <div class="interests-container">
+            <div class="interest-card">
+                <h3>Talking Face & Metahuman Technology</h3>
+                <p>My research in this area focuses on developing realistic talking face synthesis using deep learning and computer vision techniques. I work on creating metahumans with natural facial expressions, lip synchronization, and emotional responses.</p>
+                <ul>
+                    <li>Audio-driven facial animation</li>
+                    <li>Emotion-aware talking face generation</li>
+                    <li>Cross-identity facial reenactment</li>
+                    <li>Real-time metahuman rendering</li>
+                    <li>Identity preservation in facial animation</li>
+                </ul>
+            </div>
+            <div class="interest-card">
+                <h3>Indoor Navigation</h3>
+                <p>My work in indoor navigation systems addresses the challenges of precise localization and wayfinding in complex indoor environments where GPS signals are unavailable or unreliable.</p>
+                <ul>
+                    <li>Vision-based indoor positioning</li>
+                    <li>Map generation and spatial understanding</li>
+                    <li>User-centric navigation interface design</li>
+                    <li>Machine learning for path optimization</li>
+                    <li>Multi-sensor fusion for robust localization</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
-            <div class="social-links">
+            <div class="footer-logos">
+                <a href="https://fit-hau.edu.vn/" target="_blank">
+                    <img src="images/Logo_HAU.png" alt="Hanoi Architectural University" class="footer-logo">
+                </a>
+                <a href="https://swinburne-vn.edu.vn/" target="_blank">
+                    <img src="images/Logo-Swinburne.png" alt="Swinburne Vietnam" class="footer-logo">
+                </a>
+                <a href="https://iec.ptit.edu.vn/" target="_blank">
+                    <img src="images/logoiec.png" alt="PTIT IEC" class="footer-logo">
+                </a>
+            </div>
+            
+            <div class="footer-contact">
+                <p>Email: your.email@example.com</p>
+                <p>Location: Hanoi, Vietnam</p>
+            </div>
+            
+            <div class="footer-social">
                 <a href="#"><i class="fab fa-github"></i></a>
                 <a href="#"><i class="fab fa-linkedin"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
                 <a href="#"><i class="fab fa-google-scholar"></i></a>
-                <a href="#"><i class="fab fa-researchgate"></i></a>
             </div>
-            <div class="contact-info">
-                <p>Email: tung.vuson.hau@gmail.com</p>
-                <p>Location: Hanoi, Vietnam</p>
+            
+            <div class="footer-copyright">
                 <p>&copy; 2025 Vũ Sơn Tùng. All rights reserved.</p>
             </div>
         </div>
     </footer>
+    
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
 </body>
 </html>

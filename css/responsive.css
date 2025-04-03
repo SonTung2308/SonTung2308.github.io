@@ -1,0 +1,85 @@
+/* Responsive styles */
+
+/* For tablets and smaller desktops */
+@media (max-width: 992px) {
+    .bio-info,
+    .interests-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile-section {
+        flex-direction: column;
+    }
+    
+    .profile-image {
+        margin: 0 auto 2rem;
+    }
+}
+
+/* For smartphones */
+@media (max-width: 768px) {
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .award-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .award-icon {
+        margin-bottom: 1rem;
+    }
+    
+    .navbar-container {
+        flex-direction: column;
+        padding: 1rem 0;
+    }
+    
+    .navbar-brand {
+        margin-bottom: 1rem;
+    }
+    
+    .nav-menu {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .nav-item {
+        margin: 0.5rem;
+    }
+    
+    .footer-logos {
+        flex-direction: column;
+    }
+    
+    .timeline::before {
+        left: 15px;
+    }
+    
+    .timeline-item {
+        padding-left: 55px;
+    }
+    
+    .timeline-badge {
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+    }
+}
+
+/* For small smartphones */
+@media (max-width: 480px) {
+    .profile-title {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .publication-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
