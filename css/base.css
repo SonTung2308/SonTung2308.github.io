@@ -24,10 +24,58 @@ body {
 a {
     text-decoration: none;
     color: var(--text-light);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-red);
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+/* Navbar Scrolling Effect */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-dark);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000;
+}
+
+.navbar.scrolled {
+    background-color: rgba(30, 33, 36, 0.98);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Publications Section Enhancements */
+#publications .publications-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+#hidden-publications {
+    margin-top: 20px;
+}
+
+.view-more-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: var(--accent-red);
+    color: var(--text-light);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.view-more-btn:hover {
+    background-color: darken(var(--accent-red), 10%);
 }
