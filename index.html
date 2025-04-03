@@ -91,6 +91,7 @@
     <!-- Publications Section -->
     <section id="publications" class="section container">
         <h2 class="section-title">Publications</h2>
+        <!-- Initial publications (top 3) -->
         <div class="publications-container">
             <div class="publication-card">
                 <h3>Federated Learning for Greenhouse Temperature Prediction: A Privacy-Preserving Approach Using N-BEATS</h3>
@@ -127,7 +128,14 @@
                     <a href="#" class="publication-link"><i class="fas fa-code"></i> Code</a>
                 </div>
             </div>
-            
+        </div>
+        
+        <div class="view-more-container">
+            <button id="view-more-publications-btn" class="view-more-btn">View More Publications</button>
+        </div>
+        
+        <!-- Hidden publications (shown when "View More" is clicked) -->
+        <div id="hidden-publications" class="publications-container hidden">
             <div class="publication-card">
                 <h3>An Innovative Transformer Model for Indoor Positioning Using WiFi Fingerprinting</h3>
                 <div class="publication-authors">Phuong Anh Nguyen, <strong>Tung Vu</strong>, Ngoc Le</div>
@@ -151,13 +159,7 @@
                     <a href="#" class="publication-link"><i class="fas fa-code"></i> Code</a>
                 </div>
             </div>
-        </div>
-        
-        <div class="view-more-container">
-            <button id="view-more-btn" class="view-more-btn" onclick="togglePublications()">View More Publications</button>
-        </div>
-        
-        <div id="hidden-publications" class="publications-container hidden">
+            
             <div class="publication-card">
                 <h3>Ch. 19: An Adaptive AutoLearning System for Camera-Based Facial Recognition</h3>
                 <div class="publication-authors">Phuong Anh Nguyen, <strong>Tung Son Vu</strong>, Thuan Minh Bui, Ngoc Le Anh</div>
@@ -181,7 +183,7 @@
             </div>
         </div>
     </section>
-
+    
     <!-- Projects Section -->
     <section id="projects" class="section container">
         <h2 class="section-title">Projects</h2>
@@ -300,34 +302,16 @@
         </div>
     </section>
 
-    <!-- Interests Section -->
-    <section id="interests" class="section container">
-        <h2 class="section-title">Research Interests</h2>
-        <div class="interests-container">
-            <div class="interest-card">
-                <h3>Talking Face & Metahuman Technology</h3>
-                <p>My research in this area focuses on developing realistic talking face synthesis using deep learning and computer vision techniques. I work on creating metahumans with natural facial expressions, lip synchronization, and emotional responses.</p>
-                <ul>
-                    <li>Audio-driven facial animation</li>
-                    <li>Emotion-aware talking face generation</li>
-                    <li>Cross-identity facial reenactment</li>
-                    <li>Real-time metahuman rendering</li>
-                    <li>Identity preservation in facial animation</li>
-                </ul>
-            </div>
-            <div class="interest-card">
-                <h3>Indoor Navigation</h3>
-                <p>My work in indoor navigation systems addresses the challenges of precise localization and wayfinding in complex indoor environments where GPS signals are unavailable or unreliable.</p>
-                <ul>
-                    <li>Vision-based indoor positioning</li>
-                    <li>Map generation and spatial understanding</li>
-                    <li>User-centric navigation interface design</li>
-                    <li>Machine learning for path optimization</li>
-                    <li>Multi-sensor fusion for robust localization</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+  <!-- Interests Section -->
+  <section id="interests" class="section container">
+    <h2 class="section-title">Research Interests</h2>
+    <div class="interests-list">
+        <ul>
+            <li>Talking Face & Metahuman Technology including audio-driven facial animation, emotion-aware generation, cross-identity reenactment, and identity preservation with deep learning and computer vision techniques.</li>
+            <li>Indoor Navigation Systems focusing on vision-based positioning, mapping, and wayfinding in GPS-denied environments with machine learning and sensor fusion approaches.</li>
+        </ul>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -345,7 +329,7 @@
             </div>
             
             <div class="footer-contact">
-                <p>Email: your.email@example.com</p>
+                <p>Email: tung.vuson.hau@gmail.com</p>
                 <p>Location: Hanoi, Vietnam</p>
             </div>
             

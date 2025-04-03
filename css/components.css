@@ -113,25 +113,22 @@
     text-decoration: underline;
 }
 
-/* Interest cards */
-.interest-card {
+/* Interests list */
+.interests-list {
     background-color: var(--card-bg);
     padding: 1.5rem;
     border-radius: 5px;
 }
 
-.interest-card h3 {
-    color: var(--accent-red);
-    margin-bottom: 1rem;
-}
-
-.interest-card p, .interest-card ul {
+.interests-list ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
     color: var(--text-gray);
 }
 
-.interest-card ul {
-    margin-left: 1.5rem;
-    margin-top: 1rem;
+.interests-list ul li {
+    margin-bottom: 1rem;
+    line-height: 1.6;
 }
 
 /* Project cards */

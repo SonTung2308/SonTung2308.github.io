@@ -3,18 +3,22 @@
  */
 
 // Toggle hidden publications
-function togglePublications() {
-    const hiddenPublications = document.getElementById('hidden-publications');
-    const viewMoreBtn = document.getElementById('view-more-btn');
-    
-    if (hiddenPublications.classList.contains('hidden')) {
-        hiddenPublications.classList.remove('hidden');
-        viewMoreBtn.textContent = 'Show Less';
-    } else {
-        hiddenPublications.classList.add('hidden');
-        viewMoreBtn.textContent = 'View More Publications';
+document.addEventListener('DOMContentLoaded', function() {
+    const viewMoreBtn = document.getElementById('view-more-publications-btn');
+    if (viewMoreBtn) {
+        viewMoreBtn.addEventListener('click', function() {
+            const hiddenPublications = document.getElementById('hidden-publications');
+            
+            if (hiddenPublications.classList.contains('hidden')) {
+                hiddenPublications.classList.remove('hidden');
+                viewMoreBtn.textContent = 'Show Less';
+            } else {
+                hiddenPublications.classList.add('hidden');
+                viewMoreBtn.textContent = 'View More Publications';
+            }
+        });
     }
-}
+});
 
 // Add scrolling effect to navbar
 window.addEventListener('scroll', function() {
